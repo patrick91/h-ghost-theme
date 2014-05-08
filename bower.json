@@ -7,13 +7,6 @@
   ],
   "description": "A Ghost Theme Boilerplate with all the Grunt bells & whistles",
   "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
   "dependencies": {
     "normalize-css": "~3.0.1",
     "modernizr": "~2.8.1"
