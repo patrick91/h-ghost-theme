@@ -1,7 +1,19 @@
 {
-    "name": "ghunt",
-    "version": "0.1.0",
-    "author": "Dane Grant <danecando@gmail.com>",
-    "description": "A Ghost Theme Boilerplate with all the Grunt bells & whistles",
-    "license": "MIT"
+  "name": "ghunt",
+  "version": "0.1.0",
+  "author": "Dane Grant <danecando@gmail.com>",
+  "description": "A Ghost Theme Boilerplate with all the Grunt bells & whistles",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^0.4.4",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-concat": "^0.4.0",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-cssmin": "^0.9.0",
+    "grunt-contrib-uglify": "^0.4.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-open": "^0.2.3",
+    "grunt-sass": "^0.12.1",
+    "grunt-usemin": "^2.1.1"
+  }
 }
