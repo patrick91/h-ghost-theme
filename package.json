@@ -5,7 +5,9 @@
   "description": "A Ghost Theme Boilerplate with all the Grunt bells & whistles",
   "license": "MIT",
   "devDependencies": {
+    "bower": "",
     "grunt": "^0.4.4",
+    "grunt-autoprefixer": "^0.7.3",
     "grunt-contrib-clean": "^0.5.0",
     "grunt-contrib-concat": "^0.4.0",
     "grunt-contrib-copy": "^0.5.0",
@@ -15,5 +17,8 @@
     "grunt-open": "^0.2.3",
     "grunt-sass": "^0.12.1",
     "grunt-usemin": "^2.1.1"
-  }
+  },
+    "scripts": {
+        "postinstall" : "node_modules/.bin/bower install"
+    }
 }

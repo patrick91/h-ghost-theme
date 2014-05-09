@@ -16,11 +16,11 @@ module.exports = function(grunt) {
         // Watch files for changes for livereload and sass
         watch: {
             sass: {
-                files: ['assets/sass/*.{scss,sass}'],
-                tasks: 'sass:dev'
+                files: 'assets/sass/*.{scss,sass}',
+                tasks: ['sass', 'autoprefixer']
             },
             scripts: {
-                files: ['assets/js/*.js'],
+                files: 'assets/js/*.js',
                 options:{
                     livereload: true
                 }
@@ -35,7 +35,7 @@ module.exports = function(grunt) {
                 options: {
                     livereload: true
                 },
-                files: ['assets/css/*.css']
+                files: 'assets/css/*.css'
             }
         },
 
@@ -44,6 +44,7 @@ module.exports = function(grunt) {
             release: ['.tmp', 'release']
         },
 
+        // Move files over for production release
         copy: {
             release: {
                 files: [
@@ -58,6 +59,10 @@ module.exports = function(grunt) {
                     {
                         src: 'partials/*.hbs',
                         dest: 'release/'
+                    },
+                    {
+                        src: ['assets/**', '!assets/css/**', '!assets/js/**', '!assets/sass/**'],
+                        dest: 'release/'
                     }
                 ]
             }
@@ -65,26 +70,33 @@ module.exports = function(grunt) {
 
         // Compile .scss files
         sass: {
-            dev: {
-                files: [{
-                    expand: true,
-                    cwd: 'assets/sass',
-                    src: ['*.scss'],
-                    dest: 'assets/css',
-                    ext: '.css'
-                }]
+            release: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'assets/sass',
+                        src: '*.scss',
+                        dest: '.tmp/assets/css',
+                        ext: '.css'
+                    }
+                ]
+            }
+        },
+
+        // Add vendor prefixed styles
+        autoprefixer: {
+            options: {
+                browsers: 'last 2 versions'
             },
             release: {
                 files: [{
                     expand: true,
-                    cwd: 'assets/sass',
-                    src: ['*.scss'],
-                    dest: '.tmp/css',
-                    ext: '.css'
+                    cwd: '.tmp/assets/css',
+                    src: '{,*/}*.css',
+                    dest: 'assets/css'
                 }]
             }
         },
-
 
         // Concat & minify assets
         useminPrepare: {
@@ -94,11 +106,11 @@ module.exports = function(grunt) {
             }
 
         },
-
         usemin: {
             html: 'release/default.hbs'
         },
 
+        // Open ghost page for development
         open: {
             dev: {
                 path: 'http://127.0.0.1:<%= ghunt.port %>'
@@ -109,20 +121,23 @@ module.exports = function(grunt) {
 
     // livereload for development mode
     grunt.registerTask('start', [
-        'sass:dev',
-        'open:dev',
+        'sass',
+        'autoprefixer',
+        'open',
         'watch'
     ]);
 
     // Update assets
     grunt.registerTask('update', [
-        'sass:dev'
+        'sass',
+        'autoprefixer'
     ]);
 
     // Build release
     grunt.registerTask('build', [
-        'clean',
-        'sass:dev',
+        'clean:release',
+        'sass',
+        'autoprefixer',
         'useminPrepare',
         'concat',
         'uglify',
@@ -133,9 +148,11 @@ module.exports = function(grunt) {
 
     // Same as update
     grunt.registerTask('default', [
-        'sass:dev'
+        'sass',
+        'autoprefixer'
     ]);
 
+    grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
