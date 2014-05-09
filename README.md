@@ -1,6 +1,6 @@
 # Ghunt - Jumpstart Your Ghost Theme
 
-** Ghunt is based on Casper and utilizes the power of Grunt & Bower to jumpstart your theme development**
+**Ghunt is based on Casper and utilizes the power of Grunt & Bower to jumpstart your theme development**
 
 Develop your new theme the way you want to. Ghunt comes with a basic layout based on Casper with normalize.css
 & modernizr.js included. It's ready for you to bower install the front end framework or other assets of your choice.
