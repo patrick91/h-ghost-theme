@@ -18,6 +18,13 @@ your assets to optimize your production build.
 ## Install
 Run `npm install` in the Ghunt directory to install node modules and bower dependencies.
 
+## Configure
+* Add the port your ghost blogging is running on your localhost for development in Gruntfile.js
+
+## Usage
+* Make sure your ghost blog is running before you use `grunt start` for development
+* Easily add assets to your project with bower see: http://bower.io/
+
 ## Grunt Tasks
 * `grunt update` - compiles scss & updates css files during development
 * `grunt` - default task does the same as `grunt update`
