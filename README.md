@@ -3,9 +3,8 @@
 **Ghunt is based on Casper and utilizes the power of Grunt & Bower to jumpstart your theme development**
 
 Develop your new theme the way you want to. Ghunt comes with a basic layout based on Casper with normalize.css
-& modernizr.js included. It's ready for you to bower install the front end framework or other assets of your choice.
-Ghunt takes advantage of livereload to make the theme development process easier and it uses usemin to minify & concat
-your assets to optimize your production build.
+& modernizr.js included. Ghunt uses live reload to make the theme development process easier. It uses usemin to
+minify & concat your assets to optimize your production build.
 
 ## Prerequisites
 1. Node.js
