@@ -61,7 +61,7 @@ module.exports = function(grunt) {
                         dest: 'release/'
                     },
                     {
-                        src: ['assets/**', '!assets/css/**', '!assets/js/**', '!assets/sass/**'],
+                        src: ['assets/**/*', '!assets/css/**/*', '!assets/js/**/*', '!assets/sass/**/*'],
                         dest: 'release/'
                     }
                 ]
@@ -98,6 +98,43 @@ module.exports = function(grunt) {
             }
         },
 
+        // Rename files for browser caching purposes
+        rev: {
+            release: {
+                files: {
+                    src: [
+                        'release/assets/css/vendor.css',
+                        'release/assets/images/background/*.{gif,jpeg,jpg,png,svg}',
+                        'release/assets/fonts/{,*/}*.*',
+                        'release/assets/js/{,*/}*.js'
+                    ]
+                }
+            }
+        },
+
+        // The following *-min tasks produce minified files in the dist folder
+        imagemin: {
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: 'assets/images',
+                    src: '{,*/}*.{gif,jpeg,jpg,png}',
+                    dest: 'release/assets/images'
+                }]
+            }
+        },
+
+        svgmin: {
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: 'assets/images',
+                    src: '{,*/}*.svg',
+                    dest: 'release/assets/images'
+                }]
+            }
+        },
+
         // Concat & minify assets
         useminPrepare: {
             html: 'default.hbs',
@@ -107,7 +144,17 @@ module.exports = function(grunt) {
 
         },
         usemin: {
-            html: 'release/default.hbs'
+            html: 'release/default.hbs',
+            css: ['release/assets/css/{,*/}*.css']
+        },
+
+        concurrent: {
+            release: [
+                'clean:release',
+                'sass',
+                'imagemin',
+                'svgmin'
+            ]
         },
 
         // Open ghost page for development
@@ -135,14 +182,14 @@ module.exports = function(grunt) {
 
     // Build release
     grunt.registerTask('build', [
-        'clean:release',
-        'sass',
+        'concurrent:release',
         'autoprefixer',
         'useminPrepare',
         'concat',
         'uglify',
         'cssmin',
         'copy:release',
+        'rev',
         'usemin'
     ]);
 
@@ -153,14 +200,18 @@ module.exports = function(grunt) {
     ]);
 
     grunt.loadNpmTasks('grunt-autoprefixer');
+    grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-open');
+    grunt.loadNpmTasks('grunt-rev');
     grunt.loadNpmTasks('grunt-sass');
+    grunt.loadNpmTasks('grunt-svgmin');
     grunt.loadNpmTasks('grunt-usemin');
 
 }
