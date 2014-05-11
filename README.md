@@ -2,9 +2,17 @@
 
 **Ghunt is based on Casper and utilizes the power of Grunt & Bower to jumpstart your theme development**
 
-Develop your new theme the way you want to. Ghunt comes with a basic layout based on Casper with normalize.css
-& modernizr.js included. Ghunt uses live reload to make the theme development process easier. It uses usemin to
-minify & concat your assets to optimize your production build.
+## Features
+* Follows Ghost theme best practices
+* Develop your new theme the way you want to
+* Basic layout based on Casper with normalize.css & modernizr.js included
+* Uses sass pre processing & autoprefixer post processing for css
+* Use Bower to install a front-end framework or other assets
+* live reload to make the theme development process easier
+* usemin to minify & concat your assets
+* imagemin & svgmin to compress images
+* rev for browser caching
+* Production builds follow best practice & optimized for maximum performance
 
 ## Prerequisites
 1. Node.js
@@ -18,10 +26,10 @@ minify & concat your assets to optimize your production build.
 Run `npm install` in the Ghunt directory to install node modules and bower dependencies.
 
 ## Configure
-* Add the port your ghost blogging is running on your localhost for development in Gruntfile.js
+* Add the port your ghost blogging is running on in Gruntfile.js for development
 
 ## Usage
-* Make sure your ghost blog is running before you use `grunt start` for development
+* Make sure your ghost blog is up and running before you use `grunt start` for development
 * Easily add assets to your project with bower see: http://bower.io/
 
 ## Grunt Tasks
@@ -30,8 +38,23 @@ Run `npm install` in the Ghunt directory to install node modules and bower depen
 * `grunt start` - opens your ghost blog and starts watching your files for livereload development
 * `grunt build` - compile your assets and move theme files to `release` for production
 
+## Suggested Project Structure
+see: http://docs.ghost.org/themes/ for more information
+* assets
+    * css
+    * fonts
+    * images // post images are not revved for seo purposes
+        * background // all background images used for theme via css go here to be revved
+        * uploads / posts // should use an uploads or posts directory for non theme related images.
+    * js
+    * sass
+* partials // .hbs theme partials go here
+
+all other theme files located in theme root
+
 ## Notes
-There is a bug with usemin that causes a problem with <!-- build:remove --> but it should be fixed in the next release.
+* If you don't want to use sass delete the .scss file located in `assets/sass/` & work on your css files directly at `assets/css/`
+* There is a bug with usemin that causes `<!-- build:remove -->` to leave behind 'undefined'. It should be fixed in the next release.
 Until then, before building your production release you need to manually remove the livereload script from default.hbs.
 
 ## Contribute
