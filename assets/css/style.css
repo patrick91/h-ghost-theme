@@ -2,11 +2,5 @@
 Blog specific styles
 see: http://docs.ghost.org/themes/
 */
-.style {
-  color: black; }
-
 body {
-  background: url('../images/background/noreena_slide.png'); }
-
-.bg2 {
-  backgorund: url('../images/background/conversion_page.png'); }
+  color: black; }
