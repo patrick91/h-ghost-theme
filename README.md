@@ -43,12 +43,12 @@ See: http://docs.ghost.org/themes/ for more information
 * assets
     * css
     * fonts
-    * images *post images are not revved for seo purposes*
-        * background *all background images used for theme via css go here to be revved*
-        * uploads / posts *should use an uploads or posts directory for non theme related images*
+    * images `post images are not revved for seo purposes`
+        * background `all background images used for theme via css go here to be revved`
+        * uploads / posts `should use an uploads or posts directory for non theme related images`
     * js
     * sass
-* partials *.hbs theme partials go here*
+* partials `.hbs theme partials go here`
 
 All other theme files located in theme root
 
