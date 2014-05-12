@@ -20,6 +20,7 @@ Ghunt is based on Casper and utilizes the power of Grunt & Bower to jumpstart yo
 3. Grunt
 
 ## Download
+Put a fork in it or
 `git clone https://github.com/danecando/ghunt.git` this repository into your /content/themes/ folder in Ghost.
 
 ## Install
