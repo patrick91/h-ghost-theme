@@ -16,7 +16,7 @@ module.exports = function(grunt) {
         // Watch files for changes for livereload and sass
         watch: {
             sass: {
-                files: 'assets/sass/*.{scss,sass}',
+                files: 'assets/sass/**/*.{scss,sass}',
                 tasks: ['sass', 'autoprefixer']
             },
             scripts: {
