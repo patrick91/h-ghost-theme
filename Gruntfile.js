@@ -49,8 +49,8 @@ module.exports = function(grunt) {
             release: {
                 files: [
                     {
-                        src: 'default.hbs',
-                        dest: 'release/default.hbs'
+                        src: 'package.json',
+                        dest: 'release/package.json'
                     },
                     {
                         src: '*.hbs',
@@ -112,7 +112,7 @@ module.exports = function(grunt) {
             }
         },
 
-        // The following *-min tasks produce minified files in the dist folder
+        // The following *-min tasks produce minified files in the release folder
         imagemin: {
             dist: {
                 files: [{
