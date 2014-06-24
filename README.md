@@ -55,8 +55,6 @@ All other theme files located in theme root
 
 ## Notes
 * If you don't want to use sass delete the .scss file located in `assets/sass/` & work on your css files directly at `assets/css/`
-* There is a bug with usemin that causes `<!-- build:remove -->` to leave behind 'undefined'. It should be fixed in the next release.
-Until then, before building your production release you need to manually remove the livereload script from default.hbs.
 
 ## Contribute
 Ghunt's goal is to help quickly develop and deploy high quality Ghost themes. If you have any ideas or want
