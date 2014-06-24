@@ -1,5 +1,7 @@
-/* Custom theme scripts included here */
-(function ($) {
+/* 
+ *	Include scripts for your theme here
+ */
 
+jQuery(function($) {
 
-}(jQuery));
+});
