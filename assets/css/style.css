@@ -1,6 +1,113 @@
-/*
-Blog specific styles
-see: http://docs.ghost.org/themes/
-*/
+html {
+  font-size: 10px;
+  /* apply a natural box layout model to all elements, but allowing components to change */
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
 body {
-  color: black; }
+  color: #2A2C39;
+  background: white;
+  font-family: 'Cardo', serif;
+  padding: 0 2rem; }
+  body > main, body > header, body > footer {
+    max-width: 70rem;
+    margin: 0 auto; }
+
+a {
+  color: #ef4723;
+  font-family: Georgia;
+  border-bottom: 1px dashed;
+  text-decoration: none;
+  font-weight: 600; }
+
+.hidden {
+  display: none; }
+
+::-moz-selection {
+  background: #fff;
+  /* WebKit/Blink Browsers */ }
+
+::selection {
+  background: #fff;
+  /* WebKit/Blink Browsers */ }
+
+::-moz-selection {
+  background: #fff;
+  /* Gecko Browsers */ }
+
+body > header {
+  text-align: left;
+  padding: 2rem 0 0;
+  position: relative; }
+  body > header i.fa {
+    font-size: 1.6rem;
+    color: #2A2C39;
+    transition: 0.3s color ease-out; }
+    body > header i.fa:hover {
+      color: #ef4723; }
+  body > header .main-nav {
+    letter-spacing: 0.2rem;
+    position: absolute;
+    right: 0;
+    top: 2rem; }
+    body > header .main-nav a {
+      border-bottom: none; }
+  body > header h1 {
+    font-family: 'Helvetica', sans-serif;
+    margin: 0 0 0.5rem;
+    color: #ff2b06;
+    font-size: 6rem;
+    font-weight: 600;
+    letter-spacing: -2px; }
+    body > header h1 a {
+      color: inherit;
+      text-decoration: none; }
+  body > header h2 {
+    font-weight: normal;
+    font-family: Georgia;
+    height: auto;
+    border-top: 1px dotted #ccc;
+    border-bottom: 1px dotted #ccc;
+    width: 100%;
+    padding: 3.5rem 0;
+    font-size: 2.5rem;
+    line-height: 120%; }
+
+.post-template header {
+  border: none;
+  padding-bottom: 0; }
+
+body > footer {
+  padding: 2rem;
+  margin-top: 2rem;
+  font-family: 'Georgia', serif;
+  font-size: 1.4rem;
+  line-height: 1.9rem;
+  text-align: center; }
+
+nav.pagination {
+  font-family: 'Cardo', serif;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 2rem; }
+
+.home-template > header, .archive-template > header {
+  margin-bottom: 0; }
+.home-template main article, .archive-template main article {
+  border-bottom: 1px dotted #ccc;
+  padding: 2rem 0; }
+  .home-template main article header, .archive-template main article header {
+    padding: 0;
+    text-align: left; }
+    .home-template main article header a, .archive-template main article header a {
+      color: #222; }
+      .home-template main article header a:hover, .archive-template main article header a:hover {
+        color: #ef4723;
+        border-bottom: 1px dashed #ef4723;
+        background-color: #f7f7f7; }
+    .home-template main article header .info, .archive-template main article header .info {
+      font-size: 0.8em; }
+      .home-template main article header .info a, .archive-template main article header .info a {
+        font-weight: normal; }

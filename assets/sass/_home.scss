@@ -1,0 +1,35 @@
+.home-template, .archive-template {
+    > header {
+        margin-bottom: 0;
+    }
+
+    main {
+    	article {
+    		border-bottom: 1px dotted #ccc;
+			padding: 2rem 0;
+
+    		header {
+    			padding: 0;
+    			text-align: left;
+
+    			a {
+    				color: $black;
+
+    				&:hover {
+    					color: $main-highlight-color;
+    					border-bottom: 1px dashed $main-highlight-color;;
+    					background-color: #f7f7f7;
+    				}
+    			}
+
+    			.info {
+    				font-size: .8em;
+
+    				a {
+    					font-weight: normal;
+    				}
+    			}
+    		}
+    	}
+    }
+}

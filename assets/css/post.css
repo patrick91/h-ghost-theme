@@ -1,6 +1,32 @@
-/*
-Post specific styles
-see: http://docs.ghost.org/themes/
-*/
 .post {
-  color: black; }
+  font-size: 2rem;
+  line-height: 1.3em; }
+  .post header {
+    text-align: center;
+    padding: 3rem;
+    margin-bottom: 4rem; }
+    .post header h1 {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: bold;
+      font-size: 3rem;
+      line-height: 1.3em;
+      margin: 0 0 0.67em; }
+  .post img, .post input {
+    width: 100%;
+    height: auto; }
+  .post pre code {
+    font-size: 0.8em; }
+  .post footer .share {
+    margin: 2rem 0; }
+    .post footer .share h4 {
+      display: none; }
+    .post footer .share a {
+      text-decoration: none;
+      color: #2A2C39;
+      transition: 0.3s color ease-out;
+      border-bottom: none; }
+      .post footer .share a:hover {
+        color: #ef4723; }
+
+.post-template .post header {
+  border-bottom: 0.1rem dashed #ccc; }

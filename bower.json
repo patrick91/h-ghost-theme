@@ -1,11 +1,11 @@
 {
-  "name": "ghunt",
+  "name": "patrick91",
   "version": "0.1.2",
-  "homepage": "https://github.com/danecando/ghunt",
+  "homepage": "https://github.com/patrick91/patrick91",
   "authors": [
-    "Dane Grant <danecando@gmail.com>"
+    "Dane Grant <patrick.arminio@gmail.com>"
   ],
-  "description": "A Ghost Theme Boilerplate with all the Grunt bells & whistles",
+  "description": "My blog theme based on ghunt",
   "license": "MIT",
   "dependencies": {
     "normalize-css": "~3.0.1",

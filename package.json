@@ -1,8 +1,8 @@
 {
-  "name": "ghunt",
+  "name": "patrick91",
   "version": "0.1.2",
-  "author": "Dane Grant <danecando@gmail.com>",
-  "description": "A Ghost Theme Boilerplate with all the Grunt bells & whistles",
+  "author": "Patrick Arminio <patrick.arminio@gmail.com>",
+  "description": "My blog theme based on ghunt",
   "license": "MIT",
   "devDependencies": {
     "bower": "",

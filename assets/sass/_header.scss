@@ -1,0 +1,62 @@
+body > header {
+    text-align: left;
+    padding: 2rem 0 0;
+    position: relative;
+
+    i.fa {
+        font-size: 1.6rem;
+        color: $main-content-color;
+        transition: .3s color ease-out;
+
+        &:hover {
+            color: $main-highlight-color;
+        }
+    }
+
+    .main-nav {
+        letter-spacing: .2rem;
+
+        position: absolute;
+
+        right: 0;
+        top: 2rem;
+
+        a {
+        	border-bottom: none;
+        }
+    }
+
+    h1 {
+        font-family: 'Helvetica', sans-serif;
+        margin: 0 0 .5rem;
+        color: $header-color;
+
+        font-size: 6rem;
+        font-weight: 600;
+        letter-spacing: -2px;
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+
+    h2 {
+        font-weight: normal;
+
+        font-family: Georgia;
+        height: auto;
+        border-top: 1px dotted #ccc;
+        border-bottom: 1px dotted #ccc;
+        width: 100%;
+        padding: 3.5rem 0;
+        font-size: 2.5rem;
+        line-height: 120%;
+    }
+}
+
+.post-template header {
+    border: none;
+
+    padding-bottom: 0;
+}

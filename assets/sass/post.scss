@@ -1,8 +1,58 @@
-/*
-Post specific styles
-see: http://docs.ghost.org/themes/
-*/
+@import 'colors.scss';
 
 .post {
-  color: black;
+    font-size: 2rem;
+    line-height: 1.3em;
+
+    header {
+        text-align: center;
+
+        padding: 3rem;
+
+        margin-bottom: 4rem;
+
+        h1 {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: bold;
+            font-size: 3rem;
+            line-height: 1.3em;
+
+            margin: 0 0 .67em;
+        }
+    }
+
+    img, input {
+        width: 100%;
+        height: auto;
+    }
+
+    pre code {
+        font-size: .8em;
+    }
+
+    footer .share {
+        margin: 2rem 0;
+
+        h4 {
+            display: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: $main-content-color;
+            transition: .3s color ease-out;
+
+            border-bottom: none;
+
+            &:hover {
+                color: $main-highlight-color;
+            }
+        }
+    }
+}
+
+.post-template .post {
+    header {
+        border-bottom: .1rem dashed #ccc;
+    }
 }

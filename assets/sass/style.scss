@@ -1,8 +1,50 @@
-/*
-Blog specific styles
-see: http://docs.ghost.org/themes/
-*/
+@import 'colors.scss';
+
+html {
+    font-size: 10px;
+    /* apply a natural box layout model to all elements, but allowing components to change */
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
 
 body {
-  color: black;
+    color: $main-content-color;
+    background: $main-background-color;
+
+    font-family: 'Cardo', serif;
+
+    padding: 0 2rem;
+
+    > main, > header, > footer {
+        max-width: 70rem;
+        margin: 0 auto;
+    }
 }
+
+a {
+    color: $main-highlight-color;
+
+    font-family: Georgia;
+	border-bottom: 1px dashed;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.hidden {
+    display: none;
+}
+
+::selection {
+    background: #fff; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+    background: #fff; /* Gecko Browsers */
+}
+
+@import 'header.scss';
+@import 'footer.scss';
+@import 'pagination.scss';
+@import 'home.scss';

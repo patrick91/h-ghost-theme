@@ -1,0 +1,23 @@
+{{#foreach posts}}
+<article class="{{post_class}}">
+    <header>
+        <h2 class="post-title">
+            <a href="{{url}}">
+                {{{title}}}
+            </a>
+        </h2>
+
+        <p class="info">
+        	<b>Posted:</b> <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> | <b>Author:</b> {{author}}{{tags prefix=" | <b>Filed under:</b> "}}
+        </p>
+    </header>
+
+    <section class="post-content">
+        {{excerpt}}
+    </section>
+</article>
+
+{{/foreach}}
+
+{{! Previous/next page links - displayed on every page }}
+{{pagination}}
